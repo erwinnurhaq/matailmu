@@ -1,0 +1,129 @@
+@mixin flex($direction,$justify,$align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+$colorOne: #001a26;
+$colorTwo: #053752;
+$colorThree: #f0810e;
+$colorFour: #e5de44;
+
+.container-app {
+    width: 100%;
+}
+  
+.header{
+    z-index: 10;
+    position: sticky;
+    top: -60px;
+    background-color: rgba(255, 255, 255, 0.95);
+    @include flex(column,space-around,center);
+    width: 100%;
+    min-height: 150px;
+    margin: auto;
+    .btn-login-container{
+        width: 80%;
+        @include flex(row,flex-end,center);
+        .btn-login{
+            color: $colorThree;
+        }
+    }
+    nav{
+        width: 80%;
+        @include flex(row,space-between,center);
+        img{
+            height: 60px;
+        }
+        ul{
+            list-style: none;
+            @include flex(row,space-between,center);
+            li{
+                font-size: 18px;
+                color: $colorOne;
+                position: relative;
+                padding: 0px 30px;
+                overflow: hidden;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 150px;
+                    height: 1px;
+                    background-color: black;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateX(-100%);
+                }
+                &:hover{
+                    color: $colorThree;
+                    text-decoration: none;
+                    transition: all 0.5s ease;
+                }
+                &:hover::before{
+                    transform: translateX(0%);
+                    transition: all 0.8s ease;
+                }
+            }
+        }
+    }
+}
+
+.home-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .hero-img{
+        position: fixed;
+        z-index: -10;
+        top:0;
+        left:0;
+        object-fit: cover;
+    }
+    .hero-container{        
+        width: 100%;
+        height: 85vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        padding: 0px 10%;
+        @include flex(column,center,flex-start);
+        h1{
+            font-size: 70px;
+        }
+        p{
+            padding: 15px 0px 60px 0px;
+            font-size: 24px;
+            color: $colorFour;
+        }
+        .btn-hero-container{
+            @include flex(row,flex-start,center);
+            width: 100%;
+            .btn-hero{
+                border: none;
+                border-radius: 20px;
+                width: 150px;
+                height: 40px;
+                margin-right: 30px;
+                background: $colorThree;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .btn-2{
+                background: none;
+            }
+        }
+    }
+    .home-content{
+        background-color: white;
+        width: 100%;
+        height: 50vh;
+        padding: 10%;
+    }
+}
+
+.footer{
+    width: 100%;
+    height: 50vh;
+}
