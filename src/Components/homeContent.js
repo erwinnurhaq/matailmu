@@ -1,13 +1,36 @@
 import React from 'react';
-import '../App.css';
+import '../styles/App.scss';
 
 function HomeContent() {
     return (
         <div className="home-content">
-            <h1>Lorem ipsum dolor sit amet.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, sequi commodi. Vel asperiores, nemo consequuntur quaerat non ea aliquid. Aspernatur, tenetur quasi. Illo voluptatem aspernatur repellendus quod perspiciatis in cupiditate.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At reiciendis iste tenetur tempora excepturi mollitia, nisi necessitatibus corrupti laudantium recusandae magni maiores quos soluta eius accusantium eligendi ea odio ratione eveniet quidem illum fugiat sunt nobis sequi. Delectus, earum architecto dolore reprehenderit nam quaerat est doloribus nostrum impedit sit molestiae, obcaecati aperiam laboriosam, consectetur adipisci debitis ab corporis perspiciatis quis vel. Corporis assumenda optio repellendus architecto vel ipsa labore quo, reiciendis quas. Voluptas ex perferendis quod vitae dolorem, est dicta!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni temporibus iure unde reiciendis minus inventore molestiae deserunt molestias eveniet quam repudiandae aliquid illum laudantium ducimus quae odio aperiam at, velit praesentium amet placeat vel et nesciunt! Distinctio molestiae blanditiis nihil dignissimos praesentium neque omnis dolorum? Praesentium velit, accusantium corporis adipisci porro neque similique rerum molestias accusamus quod, non vel in.</p>
+            <div className="content-wrapper1">
+                <div className="content-text">
+                    <h1>We create an Ecosystem of Education<br />like no others!</h1>
+                    <p>A big collaboration of teachers, parents and schools to create better ecosystem of education that no longer hurts the students and weaken their own potential to be what they want, because we believe that every child is unique.</p>
+                </div>
+                <div className="content-img">
+                    <img src={require('../img/batch1.png')} alt="trinity" />
+                </div>
+            </div>
+            <div className="content-wrapper2">
+                <div className="content-img">
+                    <img src={require('../img/batch2.png')} alt="trinity" />
+                </div>
+                <div className="content-text">
+                    <h1>Learning with fun!</h1>
+                    <p>Everything can be learned easily with fun learning media and methods. Students also can explore about what they learn with fun activities so they can enjoy learing.</p>
+                </div>
+            </div>
+            <div className="content-wrapper1">
+                <div className="content-text">
+                    <h1>21st Century Ready!</h1>
+                    <p>With the training in our <b>Teacher Incubator</b>, teachers can help students to learn and acquire the 21st Century skills which is really important for their future life</p>
+                </div>
+                <div className="content-img">
+                    <img src={require('../img/batch3.png')} alt="trinity" />
+                </div>
+            </div>
         </div>
     );
 }
