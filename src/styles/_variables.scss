@@ -1,0 +1,12 @@
+@mixin flex($direction,$justifyContent,$alignItems) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+$colorDark: #001a26;
+$colorDimDark: #053752;
+$colorLight: white;
+$colorOne: #f0810e;
+$colorTwo: #e5de44;

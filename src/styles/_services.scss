@@ -1,0 +1,126 @@
+.servicesContainer{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    .imgBgContainer{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .imgBg{
+            width: 100%;
+            object-fit: cover;
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            animation: slideBg 20s ease alternate infinite;
+        }
+        @keyframes slideBg {
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(1.25);
+            }
+        }
+    }
+    .content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // background-color: rgba(0, 0, 0, 0.5);
+        @include flex(row, center, center);
+        .servicesWrapper{
+            width: 100%;
+            height: 65vh;
+            padding: 0px 5vw;
+            @include flex(row, space-evenly, center);
+            .serviceCard{
+                width: 20%;
+                height: 100%;
+                margin-top: 5vh;
+                border-radius: 25px;
+                transition: all 0.4s ease;
+                &:hover{
+                    transform: scale(1.05);
+                }
+                .cardWrapper{
+                    cursor: default;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    @include flex(column, flex-start, center);
+                    .imgContainer{
+                        position: absolute;
+                        width: 100%;
+                        height: 90%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .descContainer{
+                        position: absolute;
+                        top: 90%;
+                        width: 100%;
+                        @include flex(column, flex-start, center);
+                        transition: all 0.4s ease;
+                        background-color: $colorLight;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                        h1{
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            padding: 1rem 0px;
+                        }
+                        p{
+                            font-size: 0.9rem;
+                            opacity: 0;
+                            padding: 0px 10% 5% 10%;
+                            font-weight: 400;
+                        }
+                        .btnContainer{
+                            width: 100%;
+                            margin-top: 1rem;
+                            @include flex(row, center, center);
+                            .btnOne{
+                                font-size: 0.9rem;
+                                color: $colorDimDark;
+                                border-radius: 50px;
+                                width: 90px;
+                                background-image: linear-gradient(45deg, $colorOne 0%, $colorTwo 100%);
+                                margin-right: 2.5%;
+                                transition: all 0.2s ease;
+                                &:hover{
+                                    color: $colorLight;
+                                    transform: scale(1.05);
+                                }
+                            }
+                            .btnTwo{
+                                font-size: 0.85rem;
+                                color: $colorDimDark;
+                                width: 125px;
+                                background: none;
+                                border-radius: 50px;
+                                transition: all 0.2s ease;
+                                &:hover{
+                                    color: $colorOne;
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                    &:hover{
+                        .descContainer{
+                            transform: translateY(-85%);
+                            p{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

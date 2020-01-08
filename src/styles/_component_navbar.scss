@@ -1,0 +1,107 @@
+.navContainer{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 12.5vh;
+    max-height: 120px;
+    width: 100%;
+    @include flex(row, center,center);
+    padding: 0px 5vw;
+    margin: auto;
+    .navWrapper{
+        width: 100%;
+        height: 100%;
+        @include flex(row, center,center);
+        .leftSide{
+            width: 60%;
+            height: 100%;
+            @include flex(row, flex-start,center);
+            .logo{
+                height: 45%;
+                object-fit: contain;
+                cursor: pointer;
+            }
+        }
+        .rightSide{
+            width: 40%;
+            height: 100%;
+            @include flex(row, space-between, center);
+            .btnLogin{
+                margin-left: 5vw;
+                color: $colorDimDark;
+                transition: all 0.4s ease;
+                .iconAccount{
+                    font-size: 1.75rem;
+                }
+                p{
+                    padding-left: 7px;
+                    font-size: 1rem;
+                }
+                &:hover{
+                    background-color: transparent;
+                    color: $colorOne;
+                }
+            }
+            .btnMenu{
+                color: $colorDimDark;
+                transition: all 0.4s ease;
+                .iconMenu{
+                    font-size: 1.75rem;
+                }
+                &:hover{
+                    background-color: transparent;
+                    color: $colorOne;
+                }
+            }
+        }
+    }
+    .bgWhite{
+        background-color: $colorLight;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 38%;
+        height: 100%;
+        border-bottom-left-radius: 5vh;
+    }
+    .drawerHeader{
+        height: 12.5vh;
+        max-height: 120px;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        @include flex(row, flex-end, center);
+        padding-right: 5vw;
+        .iconCloseMenu{
+            transition: all 0.4s ease;
+            &:hover{
+                color: $colorOne;
+            }
+        }
+    }
+    .drawerMenu{
+        width: 100%;
+        height: 100vh;
+        @include flex(column, space-evenly, center);
+        padding: 20vh 0px;
+        .btnMenu{
+            // width: 200px;
+            height: 45px;
+            padding: 0px 22.5px;
+            border-radius: 22.5px;
+
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                // width: 100%;
+                color: $colorLight;
+                background: linear-gradient(45deg, $colorOne 0%, $colorTwo 100%);
+                // background-color: transparent;
+                font-size: 1.2rem;
+                border-radius: 22.5px;
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}

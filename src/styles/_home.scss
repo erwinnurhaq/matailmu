@@ -1,0 +1,183 @@
+.homeContainer{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    @include flex(row, flex-start, flex-start);
+    .leftSide{
+        width: 60%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        border-top-right-radius: 7.5vh;
+        border-bottom-right-radius: 7.5vh;
+        .heroImg{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomHero 30s ease;
+        }
+        .heroContainer{
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            @include flex(column, center, flex-start);
+            padding-left: 5vw;
+            .heroText{
+                h1{
+                    color: $colorLight;
+                    font-size: 5.5rem;
+                    transition: all 0.4s ease;
+                }
+                p{
+                    color: $colorTwo;
+                    font-size: 1.75rem;
+                    transition: all 0.4s ease;
+                }
+            }
+            .heroBtnContainer{
+                margin-top: 30px;
+                .btnJoin{
+                    color: $colorDimDark;
+                    font-size: 1.15rem;
+                    width: 180px;
+                    height: 45px;
+                    // background-color: $colorOne;
+                    background-image: linear-gradient(45deg, $colorOne 0%, $colorTwo 100%);
+                    border-radius: 22.5px;
+                    transition: all 0.4s ease;
+                    &:hover{
+                        // background-color: $colorTwo;
+                        color: $colorLight;
+                        transform: scale(1.1);
+                    }
+                }
+                .btnLearn{
+                    color: $colorLight;
+                    font-size: 1.15rem;
+                    width: 180px;
+                    height: 45px;
+                    border-radius: 22.5px;
+                    margin-left: 15px;
+                    transition: all 0.4s ease;
+                    &:hover{
+                        color: $colorDimDark;
+                        background-color: #fff;
+                    }
+                }
+            }
+            @media screen and (max-width: 1366px){
+                .heroText{
+                    h1{
+                        font-size: 4.5rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        @keyframes zoomHero {
+            from{
+                transform: scale(1.5);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+    }
+    .rightSide{
+        width: 40%;
+        height: 100vh;
+        position: relative;
+        z-index: 0;
+        padding:18vh 5vw 0px 5vw;
+        @include flex(column, space-between, center);
+        .contentDesc{
+            .imgDescContainer{
+                width: 100%;
+                height: 20vh;
+                @include flex(row, center, center);
+                .imgDesc{
+                    width: 33%;
+                    object-fit: contain;
+                    opacity: 0.6;
+                    transition: all 0.4s ease;
+                    cursor: pointer;
+                    &:hover, &.active{
+                        opacity: 1;
+                        width: 40%;
+                    }
+                }
+            }
+            .descContainer{
+                width: 100%;
+                .descText{
+                    h1{
+                        font-size: 1.4rem;
+                        padding: 3vh 0px 1.5vh 0px;
+                    }
+                    p{
+                        width: 85%;
+                        padding: 5px 0px;
+                        line-height: 1.3rem;
+                    }
+                }
+            }
+        }
+        .testiContainer{
+            width: 100%;
+            position: relative;
+            margin-bottom: 5vh;
+            .testiTitle{
+                @include flex(row, flex-start, flex-start);
+                padding-bottom: 7px;
+                p{
+                    padding-left: 5px;
+                }
+            }
+            .slick-slider{
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+                border-top-left-radius: 3vh;
+                border-top-right-radius: 3vh;
+                border-bottom-left-radius: 3vh;
+                .slick-track .slick-slide div.testiItem{
+                    width: 100%;
+                    height: 15vh;
+                    display: flex !important;
+                    transition: all 0.4s ease;
+                    .testiText{
+                        height: 100%;
+                        @include flex(column, center, flex-start);
+                        padding: 5%;
+                        h3{
+                            font-size: 1rem;
+                            padding-bottom: 0.4rem;
+                            font-weight: 500;
+                        }
+                        p{
+                            font-size: 0.75rem;
+                            font-weight: 300;
+                        }
+                    }
+                    .testiImage{
+                        height: 100%;
+                        @include flex(row, center, center);
+                        padding-right: 5%;
+                        .imgProfile{
+                            height: 60%;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                @media screen and (max-width:1366px) {
+                    .slick-track .slick-slide div.testiItem{
+                        height: 20vh;
+                    }
+                }
+            }
+        }
+    }
+}

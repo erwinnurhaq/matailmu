@@ -1,0 +1,28 @@
+@import './variables';
+@import './slick';
+@import './slickTheme';
+@import './component_navbar';
+@import './component_footer';
+@import './home';
+@import './services';
+@import './profile';
+@import './career';
+@import './contact';
+@import './registration';
+
+*, ::before, ::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+.app-container{
+  display: grid;
+  .content-container{
+    // min-height: 100vh;
+    position: relative;
+  }
+}
